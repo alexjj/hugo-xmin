@@ -1,10 +1,21 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
 <h1><span class="title">{{ .Title | markdownify }}</span></h1>
-{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
-{{ if (gt .Params.date 0) }}<h2 class="date">{{ .Date.Format "2006/01/02" }}</h2>{{ end }}
-</div>
 
+<p class="terms">
+{{ if (gt .Params.date 0) }}{{ .Date.Format "January 02, 2006" }}{{ end }}
+{{ if not (eq .Lastmod .Date) }}<span class="lastmod">» updated {{ .Lastmod.Format "January 02, 2006" }}</span>{{ end }}
+<br>
+{{ range $i := (slice "categories" "tags") }}
+  {{ with ($.Param $i) }}
+  {{ $i | title }}: [ {{ range $k := . }}<a href="{{ relURL (print "/" $i "/" $k | urlize) }}">{{$k}}</a> {{ end }}
+  {{ end }}]
+  {{ end }}
+</p>
+</div>
+{{ if .Params.toc }}
+{{ .TableOfContents }}
+{{ end }}
 <main>
 {{ .Content }}
 </main>

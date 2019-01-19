@@ -1,51 +1,140 @@
-body {
-  max-width: 800px;
-  margin: auto;
-  padding: 1em;
-  line-height: 1.5em;
+/*
+ * Light and Shite
+ * Adapted for Hugo Theme
+ * The MIT License (MIT)
+ * Copyright (c) 2019 Alex Johnstone
+ */
+
+
+/* Set the colour */
+
+:root {
+    --maincolour: #009966;
 }
 
-/* header and footer areas */
-.menu { padding: 0; }
-.menu li { display: inline-block; }
-.article-meta, .menu a {
-  text-decoration: none;
-  background: #eee;
-  padding: 5px;
+/* Formatting */
+
+body{
+    font: 1.05em/1.62em sans-serif;
+    margin: 1em auto;
+    max-width: 48em;
+    padding: 0.62em;
+    line-height: 1.5;
+}
+
+h1,h2,h3 { line-height:1.2em; }
+
+p { text-align: justify; }
+
+.terms {
+    font-size: 0.9em;
+    margin: 0 0 0.5em;
+}
+
+.lastmod { font-style: italic; }
+
+hr { color: #eee; }
+
+#TableOfContents, #TOC {
+  border: 1px solid #eee;
   border-radius: 5px;
 }
-.menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
-footer a { text-decoration: none; }
-hr {
-  border-style: dashed;
-  color: #ddd;
-}
 
-/* code */
+/* Hyperlink colors */
+
+a { text-decoration: none; }
+
+a:link    { color: var(--maincolour); }
+a:visited { color: var(--maincolour); }
+a:hover   { color: #000000; }
+a:active  { color: var(--maincolour); }
+
+
+/* Code Blocks */
+
+code,
 pre {
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
-  padding: 1em;
-  overflow-x: auto;
+  background: #eee;
+  max-width: 100%;
 }
-code { background: #f9f9f9; }
-pre code { background: none; }
 
-/* misc elements */
-img, iframe, video { max-width: 100%; }
-main { hyphens: auto; }
-blockquote {
-  background: #f9f9f9;
-  border-left: 5px solid #ccc;
-  padding: 3px 1em 3px;
+code {
+  padding: 2px 2px;
+  vertical-align: text-bottom;
 }
+
+pre {
+  padding: 1em;
+  border-left: 2px solid var(--maincolour);
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+blockquote {
+    border-left: 2px solid #eee;
+    padding: 0.5em;
+}
+
+blockquote p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Footer */
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  font-family: monospace;
+}
+
+/* Make it responsive */
+
+@media print{ body{ max-width:none } }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* Nav bar */
+
+.menu { 
+    margin-bottom: 20px;
+    padding: 0 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.62em;
+    margin-right: 6px;
+    padding: 10px 20px;
+}
+
+/* Table */
 
 table {
-  margin: auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
 }
-table thead th { border-bottom: 1px solid #ddd; }
-th, td { padding: 5px; }
-thead, tfoot, tr:nth-child(even) { background: #eee; }
+
+table th, td {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) { background: #eee; }
+
+table th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--maincolour);
+    color: white
+}

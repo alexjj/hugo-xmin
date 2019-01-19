@@ -1,12 +1,17 @@
-name = "XMin"
+name = "Lord Percy"
 license = "MIT"
-licenselink = "https://github.com/yihui/hugo-xmin/blob/master/LICENSE.md"
-description = "eXtremely Minimal Hugo theme: about 150 lines of code in total, including HTML and CSS"
-homepage = "https://xmin.yihui.name"
+licenselink = "https://github.com/alexjj/lord-percy/blob/master/LICENSE.md"
+description = "Lord Percy is rather simple, but quite attractive. A minimal theme for your site. Forked from the Xtremely minimal theme by Yihui Xui."
+homepage = "https://github.com/alexjj/lord-percy"
 tags = ["minimal", "blog", "personal", "clean", "simple", "starter", "minimalist"]
 features = ["blog"]
 min_version = "0.18"
 
 [author]
-  name = "Yihui Xie"
-  homepage = "https://yihui.name"
+  name = "Alex Johnstone"
+  homepage = "https://alexjj.com"
+
+[original]
+  author = "Yihui Xui"
+  homepage = "https://xmin.yihui.name/"
+repo = "https://github.com/yihui/hugo-xmin"

@@ -1,28 +1,52 @@
-# HUGO XMIN
+# Lord Percy
 
-## _Keep it simple, but not simpler_
+> A theme for [Hugo](https://gohugo.io)
 
-**XMin** is a Hugo theme written by [Yihui Xie](https://yihui.name) in about four hours: half an hour was spent on the Hugo templates, and 3.5 hours were spent on styling. The main motivation for writing this theme was to provide a really minimal example to beginners of Hugo templates. This XMin theme contains about 130 lines of code in total, including the code in HTML templates and CSS (also counting empty lines).
+Lord Percy is rather simple, but quite attractive
 
+Lord Percy is forked from the **XMin** theme, written by [Yihui Xie](https://yihui.name). I've tweaked it and combined it with my simple [CSS framework](https://github.com/alexjj/light-and-shite), for use on my own personal [site](https://alexjj.com).
 
-```bash
-find . -not -path '*/exampleSite/*' \( -name '*.html' -o -name '*.css' \) | xargs wc -l
+### Instructions
+
+1: Install Hugo.
+
+See the [official instructions](https://gohugo.io/getting-started/installing)
+
+2: Create a new site.
+
+```
+hugo new site mysite
 ```
 
+3: Initialize git
+
 ```
-       5 ./layouts/404.html
-      12 ./layouts/_default/single.html
-      18 ./layouts/_default/list.html
-      16 ./layouts/_default/terms.html
-       0 ./layouts/partials/foot_custom.html
-       0 ./layouts/partials/head_custom.html
-       9 ./layouts/partials/footer.html
-      20 ./layouts/partials/header.html
-      51 ./static/css/style.css
-       7 ./static/css/fonts.css
-     138 total
+cd mysite
+git init
 ```
 
-I can certainly further reduce the code, for example, by eliminating the CSS, but I believe a tiny bit CSS can greatly improve readability. You cannot really find many CSS frameworks that only contain 50 lines of code.
+4: Clone the repo
 
-[![Screenshot](https://github.com/yihui/hugo-xmin/raw/master/images/screenshot.png)](https://xmin.yihui.name)
+```
+git submodule add https://github.com:alexjj/lord-percy.git themes/lord-percy
+```
+
+5: Have a look in the `exampleSite` directory in the `themes\lord-percy` folder. You can copy the `content/`, and `config.toml` files to get started. 
+
+6: Run `hugo server` and enjoy!
+
+### New Posts
+
+To make new posts, simply use the command line:
+
+```
+hugo new post/my-first-post.md
+```
+
+### Colour
+
+At the top of `/static/style.css` you will see the variable --maincolour defined. Edit this to change the theme's colour.
+
+#### Screenshot
+
+todo..
